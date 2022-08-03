@@ -1,0 +1,356 @@
+@charset "UTF-8";
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*,
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol {
+    padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul,
+ol {
+    list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a {
+    text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button, textarea, input {
+    background-color: inherit;
+    outline: none;
+    border: none;
+    overflow: auto;
+    box-shadow: none;
+    font-family: inherit;
+    resize: none;
+}
+
+/* Default styles */
+/* Default styles */
+body {
+    background-color: #fafafa;
+    min-height: 100vh;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-family: 400;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.container {
+    width: 1125px;
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Blocks */
+.header {
+    background: #f4841c;
+    background: linear-gradient(90deg, #f4841c 0%, #f4841c 33%, #ff7fc1 100%);
+    padding: 15px 0;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__logo {
+    width: 80px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.header__text {
+    font-weight: 600;
+}
+
+.header__logo-text {
+    font-size: 18px;
+}
+
+.header__reply {
+    font-size: 16px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.header__reply::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: greenyellow;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    flex: 1;
+}
+
+.footer {
+    border-top: 1px solid gray;
+    background-color: white;
+    margin-top: auto;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer label {
+    cursor: pointer;
+}
+
+.footer__inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer__left {
+    display: flex;
+    align-items: center;
+}
+
+.footer__play {
+    width: 50px;
+    background-color: #a455ff;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.footer__play img {
+    width: 100%;
+    color: white;
+}
+
+.footer__clip {
+    width: 30px;
+    height: 22px;
+}
+
+.footer__clip img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+.footer__right {
+    background-color: #dee6e7;
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.footer__right input {
+    text-align: right;
+    width: 100%;
+}
+
+.section-chat {
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.section-chat__me {
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-chat__dots {
+    align-self: flex-start;
+    width: 15px;
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+.section-chat__dots img {
+    width: 100%;
+}
+
+.section-chat__item {
+    background-color: #a455ff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.section-chat__item-me {
+    position: relative;
+}
+
+.section-chat__item-me::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 0;
+    border-color: transparent #a455ff transparent transparent;
+}
+
+.section-chat__item-text {
+    margin-bottom: 5px;
+}
+
+.section-chat__date {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.section-chat__date img {
+    width: 10px;
+}
+
+.section-chat__name {
+    color: black;
+    text-align: right;
+}
+
+.section-chat__avatar {
+    min-width: 50px;
+    height: 50px;
+    align-self: flex-end;
+}
+
+.section-chat__avatar img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.section-chat__you {
+    display: flex;
+    gap: 10px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.section-chat__item-you {
+    background-color: #dee6e7;
+    position: relative;
+}
+
+.section-chat__item-you::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    border-color: #dee6e7 transparent transparent transparent;
+}
+
+.section-chat__name-you {
+    text-align: left;
+}
+
+.section-chat__hr {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.section-chat__hr::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #b6b6b6;
+}
+
+.section-chat__today {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    color: black;
+    background-color: #dee6e7;
+    position: relative;
+    z-index: 1;
+}
